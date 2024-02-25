@@ -2,4 +2,4 @@
 
 Лендинг аукциона вещей
 
-Ссылака на проект: https://github.com/OliaSaf/ono-tebe-nado
+Ссылка на проект: https://github.com/OliaSaf/ono-tebe-nado
