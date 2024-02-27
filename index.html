@@ -11,13 +11,15 @@
   </head>
   <body>
     <header class="header">
-      <nav class="header__menu">
+      <nav>
         <ul class="header__links-list">
           <li
-            class="header__links-list-item header__links-list-item_no-bullit"
-          >
-            <a >главная</a>
+            class="header__links-list-item header__links-list-item_no-bullit">
+            <a class="header__links-list-item_link-active" href="#0">главная</a>
           </li>
+          <!-- пришлось опустить класс header__links-list-item_link-active в тег a,
+            что не соответствует БЭМ. но в противном случае переставало работать
+            свойство text-decoration: none -->
           <li class="header__links-list-item">
             <a href="#lots">посмотреть лоты</a>
           </li>
@@ -45,10 +47,10 @@
           <span class="aligned-text"
             >о<span class="letter-spacing-extended">но</span></span
           >
-          <span class="aligned-text_center"
+          <span class="aligned-text-center"
             >те<span class="letter-spacing-extended">бе</span></span
           >
-          <span class="aligned-text_right"
+          <span class="aligned-text-right"
             ><span class="letter-spacing-extended">н</span>ад<span
               class="no-letter-spacing"
               >о</span
@@ -56,24 +58,24 @@
           >
         </h1>
         <div class="cover__description">
-          <h2 class="cover__description-text">
+          <p class="cover__description-text">
             Аукцион вещей,
             <span class="cover__description-text-extended">в</span>которые никто
             не верил
-          </h2>
+          </p>
           <button class="bet-button" type="button">Сделать ставку</button>
         </div>
       </section>
       <section class="lots" id="lots">
-        <h3 class="lots__heading">Лоты</h3>
+        <h2 class="lots__heading">Лоты</h2>
         <ul class="lots__card-list">
           <li class="lots__card-list-item">
             <a class="card-link" href="#0">
               <div class="overlay"></div>
               <article class="card card_type_film">
-                <h4 class="card__title">
+                <h3 class="card__title">
                   Фильм режиссёра, который бросил киношколу
-                </h4>
+                </h3>
                 <p class="card__text">
                   Не просто бросил, а ушёл с первой лекции. Какой была бы ваша
                   ставка, если бы вы не знали, что режиссёр — Пол Томас
@@ -86,9 +88,9 @@
             <a class="card-link" href="#0">
               <div class="overlay"></div>
               <article class="card card_type_book">
-                <h4 class="card__title">
+                <h3 class="card__title">
                   Книга, где описан один скучный день из жизни рекламного агента
-                </h4>
+                </h3>
                 <p class="card__text">
                   Объёмом почти в тысячу страниц. Иногда без знаков препинания и
                   с переходами на древнеанглийский. В ней одновременно
@@ -104,9 +106,9 @@
             <a class="card-link" href="#0">
               <div class="overlay"></div>
               <article class="card card_type_picture">
-                <h4 class="card__title">
+                <h3 class="card__title">
                   Картина, которую повторит даже 5-летний сын маминой подруги
-                </h4>
+                </h3>
                 <p class="card__text">
                   Ну действительно, там линия, тут кружочек, а здесь и вовсе
                   что-то похожее на инфузорию-туфельку. Никаких полей, лесов,
@@ -129,7 +131,7 @@
           </div>
         </div>
         <div class="about__column">          
-            <h3 class="about__title">Об аукционе</h3>
+            <h2 class="about__title">Об аукционе</h2>
             <div class="about__text">
               <p>
                 Здесь вы&nbsp;не&nbsp;встретите очередное пафосное собрание
@@ -160,10 +162,15 @@
         <p>наб. Принсенграхт 263- 265, Амстердам</p>
       </address>
       <nav>
-        <ul class="footer__menu-list">
-          <li>
-            <a>главная</a>
+        <ul class="footer__menu-list"> 
+          <li class="footer__menu-list-item">
+            <a class="footer__menu-link footer__menu-link_active" href="#0">главная</a>
           </li>
+          <!-- убирала классы footer__menu-list-item, footer__menu-link, поскольку не пришлось
+            использовать. но вернула для соответствия БЭМ-->
+          <!-- у классов header__links-list-item_link-active, footer__menu-link_active
+            одинаковые свойства. их можно было бы вынести в отдельный класс link-active,
+            но это не будет соответствовать БЭМ, насколько я поняла  -->
           <li>
             <a href="#lots">посмотреть лоты</a>
           </li>
@@ -172,29 +179,31 @@
           </li>
         </ul>
       </nav>
-      <ul class="footer__social-list">
-        <li>
-          <a href="#0">
-            <img
-              class="footer__social-icon"
-              src="./images/yt.svg"
-              alt="YouTube">
-          </a>
-        </li>
-        <li>
-          <a href="#0">
-            <img class="footer__social-icon" src="./images/vk.svg" alt="VK">
-          </a>
-        </li>
-        <li >
-          <a href="#0">
-            <img
-              class="footer__social-icon"
-              src="./images/pinterest.svg"
-              alt="Pinterest">
-          </a>
-        </li>
-      </ul>
+      <nav>
+        <ul class="footer__social-list">
+          <li>
+            <a href="#0" target="_blank">
+              <img
+                class="footer__social-icon"
+                src="./images/yt.svg"
+                alt="YouTube">
+            </a>
+          </li>
+          <li>
+            <a href="#0" target="_blank">
+              <img class="footer__social-icon" src="./images/vk.svg" alt="VK">
+            </a>
+          </li>
+          <li >
+            <a href="#0" target="_blank">
+              <img
+                class="footer__social-icon"
+                src="./images/pinterest.svg"
+                alt="Pinterest">
+            </a>
+          </li>
+        </ul>
+      </nav>
     </footer>
   </body>
 </html>
